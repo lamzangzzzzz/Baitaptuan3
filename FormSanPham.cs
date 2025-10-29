@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -144,7 +144,7 @@ namespace Baitaptuan3_cau3
             {
                 var lines = File.ReadAllLines(ofd.FileName);
 
-                foreach (var line in lines.Skip(1)) // bỏ header
+                foreach (var line in lines.Skip(1)) 
                 {
                     var c = line.Split(',');
                     var sp = new SanPham(c[0], c[1], decimal.Parse(c[2]), int.Parse(c[3]));
@@ -158,7 +158,6 @@ namespace Baitaptuan3_cau3
 
                 MessageBox.Show("Import thành công!");
 
-                // reload nếu đang chọn danh mục
                 if (treeView1.SelectedNode != null)
                     treeView1_AfterSelect(null, new TreeViewEventArgs(treeView1.SelectedNode));
             }
